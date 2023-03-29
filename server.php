@@ -85,22 +85,28 @@ function saluti($array){
 // ; se multiplo di 5 stampare “JAVASCRIPT”;
 //  se multiplo di 3 e 5 contemporaneamente deve stampare “HACKADEMY70".
 
-
-for($i = 1; $i <= 100; $i++){
-    switch($i){
-        case ($i % 5 == 0 && $i % 3 == 0):
-            echo "HACKADEMY70"."\n";
-            break;
-        case ($i % 5 == 0):
-            echo "JAVASCRIPT"."\n";
-            break;
-        case ($i % 3 == 0):
-            echo "PHP"."\n";
-            break;
-        case ($i % 5 != 0 && $i % 3 != 0):
-            echo $i."\n";
-            break;
+//trasformato il tutto in una funzione che accetta due valori, il nostro range modificabile dall'utente a piacere
+function numeri($min, $max){
+    for($i = $min; $i <= $max; $i++){
+        switch($i){
+            case ($i % 5 == 0 && $i % 3 == 0): // numeri multipli di 5 e di 3
+                echo "HACKADEMY70"."\n";
+                break;
+            case ($i % 5 == 0): // numeri multipli di 5
+                echo "JAVASCRIPT"."\n";
+                break;
+            case ($i % 3 == 0):
+                echo "PHP"."\n"; // numeri multipli di 3
+                break;
+            case ($i % 5 != 0 && $i % 3 != 0): // altri numeri
+                echo $i."\n";
+                break;
+        }
     }
+    
 }
+//richiamo la funzione con il range che più mi piace
+numeri(-25, 120);
+
 
 ?>
