@@ -20,10 +20,9 @@
 //     return false;
 // }
 
-  
-// $array = ["3", "5", "8", "16", "45", "36"];
+// $arra = ["3", "5", "8", "16", "45", "36"];
 // $counter = 0;
-// $mioArray = array_filter($array, "numPari");
+// $mioArray = array_filter($arra, "numPari");
 // foreach($mioArray as $numPari){
 //     $counter += $numPari;
 // }
@@ -38,35 +37,70 @@
 // “Buongiorno Sig.ra Nome Cognome” o “Buongiorno Nome Cognome” a seconda del genere
 
 
-// $persona1 = [
-//     'nome' => 'Andrea',
-//     'cognome' => 'Rossi',
-//     'genere' => 'Uomo',
-// ];
-// $persona2 = [
-//     'nome' => 'Giacomo',
-//     'cognome' => 'Brambilla',
-//     'genere' => 'Uomo',
-// ];
-// $persona3 = [
-//     'nome' => 'Lorenza',
-//     'cognome' => 'Fiuggi',
-//     'genere' => 'Donna',
-// ];
+$persona1 = [
+    'nome' => 'Andrea',
+    'cognome' => 'Rossi',
+    'genere' => 'Uomo',
+];
+$persona2 = [
+    'nome' => 'Giacomo',
+    'cognome' => 'Brambilla',
+    'genere' => 'Uomo',
+];
+$persona3 = [
+    'nome' => 'Lorenza',
+    'cognome' => 'Fiuggi',
+    'genere' => 'Donna',
+];
+$persona4 = [
+    'nome' => 'jinx',
+    'cognome' => ' ',
+    'genere' => 'Fluid',
+];
 
-// function saluti($array){
-//     if($array['genere'] == "Uomo"){
-//         $nome = $array['nome'];
-//         $cognome = $array['cognome'];
-//         echo "Buongiorno Signor $nome, il suo gnome è $cognome, giusto?";
-//     } else if ($array['genere'] == "Donna"){
-//         $nome = $array['nome'];
-//         $cognome = $array['cognome'];
-//         echo "Buongiorno Signora $cognome, il suo nome è $nome, ricordo bene?";
-//     }
-// }
+
+function saluti($array){
+    $nome = $array['nome'];
+    $cognome = $array['cognome'];
+    
+    if($array['genere'] == "Uomo"){
+        echo "Buongiorno Signor $nome, il suo cognome è $cognome, giusto? \n";
+    } else if ($array['genere'] == "Donna"){
+        echo "Buongiorno Signora $cognome, il suo nome è $nome, ricordo bene? \n";
+    } else {
+        echo "Per caso un robot?";
+    }
+}
 // saluti($persona1);
 // saluti($persona2);
 // saluti($persona3);
+// saluti($persona4);
+
+
+
+
+// ESERCIZIO 3
+// Scrivere un programma che stampi in console tutti i numeri da uno a cento. 
+// Se il numero è multiplo di 3 stampare “PHP” al posto del numero
+// ; se multiplo di 5 stampare “JAVASCRIPT”;
+//  se multiplo di 3 e 5 contemporaneamente deve stampare “HACKADEMY70".
+
+
+for($i = 1; $i <= 100; $i++){
+    switch($i){
+        case ($i % 5 == 0 && $i % 3 == 0):
+            echo "HACKADEMY70"."\n";
+            break;
+        case ($i % 5 == 0):
+            echo "JAVASCRIPT"."\n";
+            break;
+        case ($i % 3 == 0):
+            echo "PHP"."\n";
+            break;
+        case ($i % 5 != 0 && $i % 3 != 0):
+            echo $i."\n";
+            break;
+    }
+}
 
 ?>
